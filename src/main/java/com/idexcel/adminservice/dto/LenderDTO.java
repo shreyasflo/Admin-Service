@@ -16,7 +16,7 @@ public class LenderDTO{
 	@NotNull
 	private String name;
 	
-	@NotNull
+		
 	private Address address;
 	
 	public String getName() {
@@ -27,7 +27,7 @@ public class LenderDTO{
 		return address;
 	}
 
-	public LenderDTO(@NotNull String name, @NotNull Address address) {
+	public LenderDTO(String name, Address address) {
 		super();
 		this.name = name;
 		this.address = address;

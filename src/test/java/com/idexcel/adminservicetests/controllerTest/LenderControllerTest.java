@@ -1,4 +1,4 @@
-package com.idexcel.adminservicetests;
+package com.idexcel.adminservicetests.controllerTest;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -21,7 +22,7 @@ import com.idexcel.adminservice.controller.LenderController;
 import com.idexcel.adminservice.dto.LenderDTO;
 import com.idexcel.adminservice.entity.Address;
 import com.idexcel.adminservice.entity.Lender;
-import com.idexcel.adminservice.service.LenderService;
+import com.idexcel.adminservice.service.LenderServiceImpl;
 
 @WebMvcTest({LenderController.class})
 @RunWith(SpringRunner.class)
@@ -29,7 +30,7 @@ public class LenderControllerTest {
 
 	
 	@MockBean
-	private LenderService lenderService;
+	private LenderServiceImpl lenderService;
 	
 	@Autowired
 	private MockMvc mockMvc;
