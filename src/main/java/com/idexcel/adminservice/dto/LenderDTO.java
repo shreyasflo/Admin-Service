@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class LenderDTO{
@@ -19,6 +18,14 @@ public class LenderDTO{
 	@NotNull
 	private Address address;
 	
+	
+
+	public LenderDTO(@NotNull String name, @NotNull Address address) {
+		super();
+		this.name = name;
+		this.address = address;
+	}
+
 	public String getName() {
 		return name;
 	}
