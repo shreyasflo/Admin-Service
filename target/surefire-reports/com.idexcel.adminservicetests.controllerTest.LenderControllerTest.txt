@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.idexcel.adminservicetests.controllerTest.LenderControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 s <<< FAILURE! - in com.idexcel.adminservicetests.controllerTest.LenderControllerTest
-initializationError(com.idexcel.adminservicetests.controllerTest.LenderControllerTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.Exception: No runnable methods
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.955 s - in com.idexcel.adminservicetests.controllerTest.LenderControllerTest
