@@ -22,12 +22,12 @@ public class Lender {
 	private String updatedDate;
 	
 	public Lender() {
-		super();
+		
 	}
 	
 	public Lender(String name, Address address, String status, String createdBy, String createdDate, String updatedBy,
 			String updatedDate) {
-		super();
+		
 		this.name = name;
 		this.address = address;
 		this.status = status;
