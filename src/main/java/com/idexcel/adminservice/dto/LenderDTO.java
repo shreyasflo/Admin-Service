@@ -26,5 +26,12 @@ public class LenderDTO{
 	public Address getAddress() {
 		return address;
 	}
+
+	public LenderDTO(@NotNull String name, @NotNull Address address) {
+		super();
+		this.name = name;
+		this.address = address;
+	}
+	
 		
 }
