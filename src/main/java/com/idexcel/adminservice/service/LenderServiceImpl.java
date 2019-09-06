@@ -10,12 +10,15 @@ import java.util.TimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.idexcel.adminservice.dao.LenderRepository;
 import com.idexcel.adminservice.dto.EntityModelMapper;
 import com.idexcel.adminservice.dto.LenderDTO;
 import com.idexcel.adminservice.dto.LendersPatchDTO;
+import com.idexcel.adminservice.entity.Comment;
 import com.idexcel.adminservice.entity.Lender;
 import com.idexcel.adminservice.exception.LenderAlreadyExistsException;
 import com.idexcel.adminservice.exception.LenderNotFoundException;
@@ -104,6 +107,20 @@ public class LenderServiceImpl implements LenderService {
 			return true;
 		else 
 			throw new LenderNotFoundException("The lender with the Id "+lenderId+" does not exist");
+	}
+
+	@Override
+	public ResponseEntity<List> getComments() {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<List> comments = restTemplate.getForEntity("https://jsonplaceholder.typicode.com/comments", List.class);
+		return comments;
+	}
+
+	@Override
+	public ResponseEntity<Comment> getComment(int id) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Comment> comment = restTemplate.getForEntity("https://jsonplaceholder.typicode.com/comments/"+id, Comment.class);
+		return comment;
 	}
 
 }

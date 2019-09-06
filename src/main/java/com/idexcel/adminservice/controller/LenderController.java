@@ -21,6 +21,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.idexcel.adminservice.dto.LenderDTO;
 import com.idexcel.adminservice.dto.LendersPatchDTO;
+import com.idexcel.adminservice.entity.Comment;
 import com.idexcel.adminservice.entity.Lender;
 import com.idexcel.adminservice.service.LenderServiceImpl;
 
@@ -37,6 +38,7 @@ public class LenderController {
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{lenderId}").buildAndExpand(lenderId).toUri();
 		return ResponseEntity.created(location).build();
 	}
+	
 	
 	@GetMapping()
 	public List<Lender> getAllLenders(){
@@ -70,5 +72,15 @@ public class LenderController {
 		if(lenderServiceImpl.checkLender(lenderId)) 
 			return responseEntity;
 		return responseEntity;
+	}
+	
+	@GetMapping("/comments/{id}")
+	public ResponseEntity<Comment> getComment(@PathVariable int id){
+		return lenderServiceImpl.getComment(id);
+	}
+	
+	@GetMapping("/comments")
+	public ResponseEntity<List> getComment(){
+		return lenderServiceImpl.getComments();
 	}
 }

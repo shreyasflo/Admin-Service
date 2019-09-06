@@ -2,8 +2,11 @@ package com.idexcel.adminservice.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.idexcel.adminservice.dto.LenderDTO;
 import com.idexcel.adminservice.dto.LendersPatchDTO;
+import com.idexcel.adminservice.entity.Comment;
 import com.idexcel.adminservice.entity.Lender;
 
 public interface LenderService {
@@ -14,4 +17,6 @@ public interface LenderService {
 	public void updateLender(Lender lender, String lenderId);
 	public void deleteLenderById(String lenderId);
 	void updateStatus(LendersPatchDTO lendersPatchDTO, String lenderId);
+	ResponseEntity<List> getComments();
+	ResponseEntity<Comment> getComment(int id);
 }
