@@ -26,7 +26,7 @@ import com.idexcel.adminservice.entity.Lender;
 import com.idexcel.adminservice.service.LenderServiceImpl;
 
 @RestController
-@RequestMapping("/api/lenders")
+@RequestMapping("/shreyasapi/lenders")
 public class LenderController {
 
 	@Autowired
