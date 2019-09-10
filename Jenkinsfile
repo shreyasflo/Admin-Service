@@ -30,7 +30,7 @@ node {
 	    stage('Push Docker Image to Docker Hub') { 
 	    		withCredentials([usernamePassword(credentialsId: 'shreyasDocker', passwordVariable: 'pass', usernameVariable: 'user')]) {
 	    			sh 'docker login -u $user -p $pass' 
-	        		sh 'docker push idexceldemo/admin-service'
+	        		sh 'docker push shreyasramnath/admin-service'
 			}	 
 	    }
 	    
